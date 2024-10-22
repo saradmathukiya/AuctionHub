@@ -43,6 +43,13 @@ app.use("/api/v1/bid", bidRouter);
 app.use("/api/v1/commission", commissionRouter);
 app.use("/api/v1/superadmin", superAdminRouter);
 
+app.get("/", (req, res) => {
+  return res.json({
+    success: true,
+    message: "Your server is up and running....",
+  });
+});
+
 endedAuctionCron();
 verifyCommissionCron();
 connection();
